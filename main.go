@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/cosmicanant/go-sample-app/controllers"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	controllers.RegisterController()
+	http.ListenAndServe(`:3000`, nil)
 }
